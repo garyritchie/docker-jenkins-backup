@@ -7,8 +7,8 @@ cat << EOF > /backup.sh
 
 cd /var/backups
 
-FILENAME="${BACKUP_FILE_PREFIX}-\$(date +%Y-%m-%d-%H-%M-%S).bz2"
-BACKUP_CMD="tar --exclude=/var/jenkins_home/workspace -cjvf \${FILENAME} /var/jenkins_home"
+FILENAME="${BACKUP_FILE_PREFIX}-\$(date +%Y-%m-%d-%H-%M-%S).tar.gz"
+BACKUP_CMD="tar --exclude=/var/jenkins_home/workspace -czvf \${FILENAME} /var/jenkins_home"
 MAX_BACKUPS=${MAX_BACKUPS}
 
 echo "----- BACKUP STARTED: \${FILENAME} -----"
